@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortFolio Web</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/45794079ed.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="icon-container">
+        <a href="#"><i class="fa-solid fa-code"></i></a>
+      </div>
+      <nav class="list-container">
+        <ul class="list-nav">
+          <li><a href="#" (click)="servicioWorks()">Inicio</a></li>
+          <li><a href="#">Sobre Mi</a></li>
+          <li><a href="#">Habilidades</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="home">
+        <div class="img-name">
+          <div class="background">
+            <img src="./imgs/imgs/foto_de_perfil.jpg" alt="Agustín Yalahuma" />
+            <div class="name">
+              <h1><a href="#">Agustín Yalahuma</a></h1>
+              <span>Front End Developer</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="no-home">
+        <section class="about">
+          <h2>Sobre Mi</h2>
+          <div class="presentation">
+            <p class="texto-presentacion">
+              Hola me llamo Agustín, estudié en la E.E.S.T Nº7 y me recibí como
+              Técnico Aviónico de la misma. Durante esta etapa pude encontrar lo
+              que de verdad me interesaba: la programación. Luego de terminar el
+              secundario en 2022, de manera autodidacta, arranque a aprender
+              sobre desarrollo de paginas web lo cual me gustó y me llevo a
+              realizar proyectos referidos a este ámbito. Les dejaré algunos de
+              ellos para que puedan verlos.
+            </p>
+            <div class="projects">
+              <div class="grid-item">
+                <a href="https://www.facebook.com/" target="_blank"
+                  ><img src="./imgs/imgs/facebook.png" alt="facebook"
+                /></a>
+              </div>
+              <div class="grid-item">
+                <a href="https://www.youtube.com/" target="_blank"
+                  ><img src="./imgs/imgs/youtube.png" alt="youtube"
+                /></a>
+              </div>
+              <div class="grid-item">
+                <a href="https://www.wikipedia.com/" target="_blank"
+                  ><img src="./imgs/imgs/wikipedia.jpg" alt="wikipedia"
+                /></a>
+              </div>
+              <div class="grid-item">
+                <a href="https://www.google.com/" target="_blank"
+                  ><img src="./imgs/imgs/google.png" alt="google"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="skills">
+          <h2>Habilidades</h2>
+          <div class="tecnologies">
+            <div class="front-end">
+              <h4>Tecnologías Front End</h4>
+              <div class="skills-container">
+                <figure>
+                  <img src="./imgs/svg/html.svg" alt="Html" class="html" />
+                  <figcaption>HTML</figcaption>
+                </figure>
+                <figure>
+                  <img src="./imgs/svg/css.svg" alt="Css" class="css" />
+                  <figcaption>CSS</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="./imgs/svg/javascript.svg"
+                    alt="JavaScript"
+                    class="javascript"
+                  />
+                  <figcaption>JavaScript</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="./imgs/svg/typescript.svg"
+                    alt="TypeScript"
+                    class="typescript"
+                  />
+                  <figcaption>TypeScript</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="./imgs/svg/angular.svg"
+                    alt="Angular"
+                    class="Angular"
+                  />
+                  <figcaption>Angular</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="back-end">
+              <h4>Tecnologías Back End</h4>
+              <div class="skills-container">
+                <figure>
+                  <img
+                    src="./imgs/svg/python.svg"
+                    alt="Python"
+                    class="python"
+                  />
+                  <figcaption>Python</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contact">
+          <h2>Contacto</h2>
+          <h4>Para trabajar juntos me puedes contactar.</h4>
+          <div class="contact-methods">
+            <!-- Mail - Debe abrir un formulario en el cual mande un mail-->
+            <a href="#"
+              ><i class="fa-regular fa-envelope"></i><span>E-mail</span></a
+            >
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/agusyalahuma/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i><span>Instagram</span></a
+            >
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/alexis-yalahuma/"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a
+            >
+            <!-- Github -->
+            <a href="https://github.com/AgustinYalahuma" target="_blank"
+              ><i class="fa-brands fa-github"></i><span>Github</span></a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <p class="copyright">
+        Copyright © 2023. <a href="#">@agustin-yalahuma</a> <br />Todos los
+        Derechos Reservados
+      </p>
+    </footer>
+  </body>
+</html>

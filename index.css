@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -18,8 +19,13 @@
 }
 
 .header .icon-container a {
-  /* Debe dirigir al home */
   font-size: 20px;
+}
+/* Sirve para cuando se dezliza el scroll-bar deje un margin en la parte superior que se quiere mostrar */
+#about,
+#skills,
+#contact {
+  scroll-margin-top: 75px;
 }
 
 .header .list-container .list-nav li {

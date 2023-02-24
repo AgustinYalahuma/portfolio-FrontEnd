@@ -18,19 +18,19 @@
   <body>
     <header class="header">
       <div class="icon-container">
-        <a href="#"><i class="fa-solid fa-code"></i></a>
+        <a href="#home"><i class="fa-solid fa-code"></i></a>
       </div>
       <nav class="list-container">
         <ul class="list-nav">
-          <li><a href="#" (click)="servicioWorks()">Inicio</a></li>
-          <li><a href="#">Sobre Mi</a></li>
-          <li><a href="#">Habilidades</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Sobre Mi</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="home">
+      <section id="home" class="home">
         <div class="img-name">
           <div class="background">
             <img src="./imgs/imgs/foto_de_perfil.jpg" alt="Agustín Yalahuma" />
@@ -43,7 +43,7 @@
       </section>
       <div class="no-home">
         <section class="about">
-          <h2>Sobre Mi</h2>
+          <h2 id="about">Sobre Mi</h2>
           <div class="presentation">
             <p class="texto-presentacion">
               Hola me llamo Agustín, estudié en la E.E.S.T Nº7 y me recibí como
@@ -79,7 +79,7 @@
           </div>
         </section>
         <section class="skills">
-          <h2>Habilidades</h2>
+          <h2 id="skills">Habilidades</h2>
           <div class="tecnologies">
             <div class="front-end">
               <h4>Tecnologías Front End</h4>
@@ -134,7 +134,7 @@
           </div>
         </section>
         <section class="contact">
-          <h2>Contacto</h2>
+          <h2 id="contact">Contacto</h2>
           <h4>Para trabajar juntos me puedes contactar.</h4>
           <div class="contact-methods">
             <!-- Mail - Debe abrir un formulario en el cual mande un mail-->
@@ -161,7 +161,7 @@
     </main>
     <footer class="footer">
       <p class="copyright">
-        Copyright © 2023. <a href="#">@agustin-yalahuma</a> <br />Todos los
+        Copyright © 2023. <a href="#home">@agustin-yalahuma</a> <br />Todos los
         Derechos Reservados
       </p>
     </footer>

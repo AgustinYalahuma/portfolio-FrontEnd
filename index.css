@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-color: rgba(98, 94, 94, 0.95);
+  background-color: #625e5ef2;
   width: 100%;
   height: 50px;
   display: flex;
@@ -58,14 +58,6 @@
 
 /* Cada uno de los elementos del nav debe dirigir al usuario al sector mencionado en la pagina */
 
-/* PHONES */
-
-/* para hacerlo responsive tengo que obtener la información del DOM, buscar el dato window.innerWidth para obtener el ancho, y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
-
-@media only screen and (max-width: 600px) {
-}
-/* PHONES */
-
 /* TABLETS */
 /* TABLETS */
 
@@ -100,7 +92,6 @@ h4 {
   width: 200px;
   border-radius: 100px;
 }
-
 .home .img-name {
   background-image: url(./imgs/imgs/codigo.jpg);
   background-size: cover;
@@ -121,6 +112,7 @@ h4 {
 .home .img-name .background .name {
   font-size: 30px;
   color: #222;
+  background-color: red;
 }
 
 .home .img-name .background .name a {
@@ -231,7 +223,7 @@ h4 {
 /* ---------------------------------------- FOOTER -------------------------------------------------- */
 
 .footer {
-  background-color: rgba(98, 94, 94, 0.9);
+  background-color: #625e5ee6;
   height: 4em;
   display: flex;
   justify-content: center;
@@ -248,3 +240,72 @@ h4 {
   text-decoration: none;
   color: #fff;
 }
+
+/* PHONES */
+
+/* para hacerlo responsive tengo que obtener la información del DOM, buscar el dato window.innerWidth para obtener el ancho, y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
+
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 100px;
+  }
+  .header .icon-container {
+    height: 50px;
+    width: 50px;
+    display: grid;
+    place-items: center;
+  }
+  .header .icon-container a {
+    font-size: 30px;
+  }
+
+  /* hacer aparecer cuando se aprete en burger-icon */
+  .header .list-container {
+    background-color: #625e5ef2;
+    position: absolute;
+    top: 100px;
+    left: 0;
+
+    visibility: hidden;
+  }
+
+  /* El list-nav tiene que estar hidden hasta que se aprete el boton */
+
+  .header .list-container .list-nav {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    gap: 0;
+  }
+  .header .list-container .list-nav li {
+    height: 100px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .header .list-container .list-nav li:hover {
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+  .header .burger-icon {
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    display: grid;
+    place-items: center;
+  }
+  .header .burger-icon i {
+    font-size: 30px;
+    transition: 0.2s;
+  }
+  .header .burger-icon i:hover {
+    color: #bbbbbb;
+  }
+
+  /* Arreglar problema de columna */
+  .home .image-name .background {
+    flex-direction: column;
+  }
+}
+
+/* PHONES */

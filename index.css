@@ -195,28 +195,29 @@ h4 {
 /* Contact Section */
 
 .no-home .contact .contact-methods {
-  display: flex;
-  margin-top: 75px;
-  justify-content: space-evenly;
-  height: 100px;
-}
-.no-home .contact .contact-methods span {
-  padding: 3px;
-  transition: 0.2s;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px;
+  padding: 10px;
+  margin-top: 50px;
+  height: 108px;
 }
 
 .no-home .contact .contact-methods i {
-  display: block;
-  text-align: center;
   font-size: 50px;
-  line-height: 0.3;
 }
 .no-home .contact .contact-methods a {
   color: rgba(58, 54, 54, 0.9);
   text-decoration: none;
 }
 
-.no-home .contact .contact-methods span:hover {
+.no-home .contact .contact-methods .contact-item {
+  padding: 5px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.no-home .contact .contact-methods .contact-item:hover {
   transform: scale(1.1);
 }
 
@@ -247,7 +248,7 @@ h4 {
 
 /* para hacerlo responsive tengo que obtener la información del DOM, buscar el dato window.innerWidth para obtener el ancho, y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   /* GENERAL */
 
   h2,
@@ -392,23 +393,21 @@ h4 {
     padding: 10px;
     justify-content: space-evenly;
   }
-
   /* SKILLS */
 
   /* CONTACT */
 
-  /* SE VOLVIO A BUGEAR, ENCONTRAR SOLUCION */
+  .no-home .contact .contact-methods {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 70px;
+    height: 220px;
+  }
 
-  .contact .contact-methods {
-    margin-top: 30px;
-    flex-wrap: wrap;
-    height: 150px;
-    gap: 20px;
+  .no-home .contact .contact-methods .contact-item {
+    height: 75px;
+    flex-basis: calc(50% - 10px);
   }
-  .contact .contact-methods span {
-    text-align: center;
-    width: calc(50% - 20px);
-  }
+  /* SE VOLVIO A BUGEAR, ENCONTRAR SOLUCION */
 
   /* CONTACT */
 }

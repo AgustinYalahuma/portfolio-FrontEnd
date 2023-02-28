@@ -87,32 +87,35 @@ h4 {
 /* General */
 
 /* Home */
-.home .img-name .background img {
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-}
+
 .home .img-name {
   background-image: url(./imgs/imgs/codigo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
 }
 
 .home .img-name .background {
   background-color: rgba(161, 148, 148, 0.8);
   display: flex;
   gap: 20px;
+  padding: 50px;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.home .img-name .background img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
 
 .home .img-name .background .name {
   font-size: 30px;
   color: #222;
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .home .img-name .background .name a {
@@ -135,19 +138,20 @@ h4 {
   line-height: 2;
 }
 .about .presentation .projects {
-  width: 50%;
   display: flex;
+  width: 50%;
   flex-wrap: wrap;
   border: 3px solid blue;
 }
 
-.presentation .projects .grid-item {
+.presentation .projects .flex-item {
   border: 2px solid red;
   flex-basis: 50%;
   padding: 10px;
+  border-radius: 15px;
 }
 
-.presentation .projects .grid-item img {
+.presentation .projects .flex-item img {
   height: 100%;
   width: 100%;
 }
@@ -170,8 +174,7 @@ h4 {
   justify-content: center;
 }
 
-.front-end,
-.back-end {
+.skills .tecnologies .tecnologies-item {
   width: 50%;
 }
 
@@ -197,24 +200,23 @@ h4 {
   justify-content: space-evenly;
   height: 100px;
 }
+.no-home .contact .contact-methods span {
+  padding: 3px;
+  transition: 0.2s;
+}
 
-.no-home .contact .contact-methods a i {
+.no-home .contact .contact-methods i {
   display: block;
   text-align: center;
+  font-size: 50px;
+  line-height: 0.3;
 }
 .no-home .contact .contact-methods a {
   color: rgba(58, 54, 54, 0.9);
   text-decoration: none;
-  font-size: 50px;
-  transition: 0.2s;
-  line-height: 0.3;
 }
 
-.no-home .contact .contact-methods a span {
-  font-size: 18px;
-}
-
-.no-home .contact .contact-methods a:hover {
+.no-home .contact .contact-methods span:hover {
   transform: scale(1.1);
 }
 
@@ -246,8 +248,25 @@ h4 {
 /* para hacerlo responsive tengo que obtener la información del DOM, buscar el dato window.innerWidth para obtener el ancho, y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
 
 @media only screen and (max-width: 600px) {
+  /* GENERAL */
+
+  h2,
+  h4 {
+    text-align: center;
+  }
+
+  .no-home {
+    padding: 0 50px;
+    font-size: 1em;
+  }
+
+  /* GENERAL */
+
+  /* HEADER */
+
   .header {
     height: 100px;
+    width: 100vw;
   }
   .header .icon-container {
     height: 50px;
@@ -261,12 +280,11 @@ h4 {
 
   /* hacer aparecer cuando se aprete en burger-icon */
   .header .list-container {
+    visibility: hidden;
     background-color: #625e5ef2;
     position: absolute;
     top: 100px;
     left: 0;
-
-    visibility: hidden;
   }
 
   /* El list-nav tiene que estar hidden hasta que se aprete el boton */
@@ -302,10 +320,97 @@ h4 {
     color: #bbbbbb;
   }
 
-  /* Arreglar problema de columna */
-  .home .image-name .background {
+  /* HEADER */
+
+  /* HOME */
+
+  .home .background {
+    padding: 50px;
     flex-direction: column;
   }
+  .home .background .name {
+    text-align: center;
+  }
+
+  .home .background .name span {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  .home .img-name {
+    background-size: cover;
+  }
+  .about .presentation {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* HOME */
+
+  /* ABOUT */
+  .about .presentation .texto-presentacion,
+  .about .presentation .projects {
+    width: 100%;
+  }
+
+  .about .presentation .projects {
+    overflow-x: scroll;
+    padding: 8px;
+    width: 100%;
+    height: 360px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 8px;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .presentation .projects .flex-item {
+    flex: 0 0 100%;
+    padding: 24px;
+    scroll-snap-align: start;
+  }
+
+  /* ABOUT */
+
+  /* SKILLS */
+
+  .skills .tecnologies {
+    flex-direction: column;
+  }
+
+  .skills .tecnologies .tecnologies-item {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .skills .tecnologies .tecnologies-item figure {
+    width: calc(50% - 30px);
+  }
+  .skills .tecnologies .tecnologies-item figure img {
+    width: 100%;
+  }
+  .skills .skills-container {
+    padding: 10px;
+    justify-content: space-evenly;
+  }
+
+  /* SKILLS */
+
+  /* CONTACT */
+
+  /* SE VOLVIO A BUGEAR, ENCONTRAR SOLUCION */
+
+  .contact .contact-methods {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    height: 150px;
+    gap: 20px;
+  }
+  .contact .contact-methods span {
+    text-align: center;
+    width: calc(50% - 20px);
+  }
+
+  /* CONTACT */
 }
 
 /* PHONES */

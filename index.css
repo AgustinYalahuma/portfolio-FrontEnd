@@ -1,3 +1,5 @@
+/* COMPUTADORA */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -134,26 +136,52 @@ h4 {
 }
 
 .about .presentation p {
-  width: 50%;
   line-height: 2;
 }
-.about .presentation .projects {
+.no-home .tecnologies {
   display: flex;
-  width: 50%;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.skills-container {
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.about_presentation-tecnologies {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.tecnologies h4 {
+  text-align: center;
+}
+.tecnologies img {
+  height: 150px;
+}
+.tecnologies .skills-container figure figcaption {
+  text-align: center;
+}
+.skills .projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 275px;
   border: 3px solid blue;
 }
 
-.presentation .projects .flex-item {
+.skills .projects .flex-item {
   border: 2px solid red;
-  flex-basis: 50%;
   padding: 10px;
   border-radius: 15px;
+  text-align: center;
 }
 
-.presentation .projects .flex-item img {
-  height: 100%;
-  width: 100%;
+.skills .projects .flex-item img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
 }
 
 /* Texto Presentación */
@@ -161,32 +189,6 @@ h4 {
 /* ------------------------------------------------------------------------ */
 
 /* Habilidades */
-
-.no-home .skills .tecnologies {
-  display: flex;
-  gap: 50px;
-}
-
-.skills .skills-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.skills .tecnologies .tecnologies-item {
-  width: 50%;
-}
-
-.skills .tecnologies h4 {
-  text-align: center;
-}
-.skills img {
-  height: 150px;
-}
-.skills .tecnologies .skills-container figure figcaption {
-  text-align: center;
-}
 
 /* Habilidades */
 
@@ -244,10 +246,19 @@ h4 {
   color: #fff;
 }
 
+/* COMPUTADORA */
+
+/* AJUSTAR ABOUT-SECTION Y SKILL-SECTION A PANTALLAS MAS PEQUEÑAS */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+/* AJUSTAR ABOUT-SECTION Y SKILL-SECTION A PANTALLAS MAS PEQUEÑAS */
+
 /* PHONES */
 
-/* para hacerlo responsive tengo que obtener la información del DOM, buscar el dato window.innerWidth para obtener el ancho, y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
-
+/* para hacerlo responsive tengo que obtener la información del DOM,
+  buscar el dato window.innerWidth para obtener el ancho,
+  y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
 @media only screen and (max-width: 767px) {
   /* GENERAL */
 

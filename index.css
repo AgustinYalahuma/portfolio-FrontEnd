@@ -539,8 +539,15 @@ h4 {
 }
 
 @media screen and (max-width: 449px) {
+  h2,
+  h4,
+  p {
+    text-align: center;
+  }
   .header {
-    height: 9%;
+    flex-direction: column;
+    height: auto;
+    padding: 0;
   }
 
   .header .icons {
@@ -594,5 +601,52 @@ h4 {
   .header .list-container .list-nav li {
     transition: 0.2s;
     cursor: pointer;
+  }
+
+  .header .list-container .list-nav li:hover {
+    transform: none;
+  }
+  /* CODIGO PARA EL HOME */
+
+  .no-home {
+    padding: 100px 10px;
+    gap: 50px;
+  }
+
+  .home .img-name .background {
+    flex-direction: column;
+  }
+
+  .home .img-name .background .name {
+    text-align: center;
+  }
+
+  /* CODIGO PARA EL ABOUT */
+
+  .about .presentation p {
+    font-size: 0.8em;
+  }
+  .about .tecnologies img {
+    height: 100px;
+  }
+  .about .tecnologies .skills-container figure {
+    text-align: center;
+    flex-basis: calc(33.33% - 50px);
+  }
+
+  /* CODIGO PARA EL PORTFOLIO */
+  .skills .projects {
+    padding: 0 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 200px);
+  }
+  /* CODIGO PARA CONTACTO */
+
+  .contact .contact-methods {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 88px 88px;
+    padding: 10px 20px;
+    /* row-gap: 50px; */
+    gap: 0;
   }
 }

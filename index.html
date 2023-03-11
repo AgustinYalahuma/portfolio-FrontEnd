@@ -14,13 +14,18 @@
       src="https://kit.fontawesome.com/45794079ed.js"
       crossorigin="anonymous"
     ></script>
+    <script defer src="index.js"></script>
   </head>
   <body>
     <header class="header">
-      <div class="icon-container">
-        <a href="#home"><i class="fa-solid fa-code"></i></a>
+      <div class="icons">
+        <div class="icon-container">
+          <a href="#home"><i class="fa-solid fa-code"></i></a>
+        </div>
+        <div class="burger-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
-      <div class="burger-icon" hidden><i class="fa-solid fa-bars"></i></div>
       <nav class="list-container">
         <ul class="list-nav">
           <li><a href="#home">Inicio</a></li>
@@ -123,26 +128,30 @@
           <h2 id="skills">Portfolio</h2>
           <h4>Aquí puedes ver alguno de mis proyectos</h4>
           <div class="projects">
-            <div class="flex-item">
-              <a href="https://www.facebook.com/" target="_blank"
-                ><img src="./imgs/imgs/facebook.png" alt="facebook"
-              /></a>
-            </div>
-            <div class="flex-item">
-              <a href="https://www.youtube.com/" target="_blank"
-                ><img src="./imgs/imgs/youtube.png" alt="youtube"
-              /></a>
-            </div>
-            <div class="flex-item">
-              <a href="https://www.wikipedia.com/" target="_blank"
-                ><img src="./imgs/imgs/wikipedia.jpg" alt="wikipedia"
-              /></a>
-            </div>
-            <div class="flex-item">
-              <a href="https://www.google.com/" target="_blank"
-                ><img src="./imgs/imgs/google.png" alt="google"
-              /></a>
-            </div>
+            <a href="https://www.facebook.com/" target="_blank">
+              <div class="grid-item">
+                <img src="./imgs/imgs/facebook.png" alt="facebook" />
+                <p class="project-item">Proyecto 1</p>
+              </div>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank">
+              <div class="grid-item">
+                <img src="./imgs/imgs/youtube.png" alt="youtube" />
+                <p class="project-item">Proyecto 2</p>
+              </div>
+            </a>
+            <a href="https://www.wikipedia.com/" target="_blank">
+              <div class="grid-item">
+                <img src="./imgs/imgs/wikipedia.jpg" alt="wikipedia" />
+                <p class="project-item">Proyecto 3</p>
+              </div></a
+            >
+            <a href="https://www.google.com/" target="_blank">
+              <div class="grid-item">
+                <img src="./imgs/imgs/google.png" alt="google" />
+                <p class="project-item">Proyecto 4</p>
+              </div></a
+            >
           </div>
         </section>
         <section class="contact">
@@ -180,8 +189,5 @@
         Derechos Reservados
       </p>
     </footer>
-    <div class="container-div">
-      <div class="child"></div>
-    </div>
   </body>
 </html>

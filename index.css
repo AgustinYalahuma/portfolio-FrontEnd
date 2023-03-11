@@ -20,7 +20,11 @@
   z-index: 10000;
 }
 
-.header .icon-container a {
+.header .icon-container {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
   font-size: 20px;
 }
 /* Sirve para cuando se dezliza el scroll-bar deje un margin en la parte superior que se quiere mostrar */
@@ -31,43 +35,33 @@
 }
 
 .header .list-container .list-nav li {
-  height: 100%;
+  display: grid;
+  place-items: center;
   list-style: none;
-  transition: 0.15s;
+  color: #fff;
+  transition: 0.2s;
+}
+.header .list-container .list-nav li:hover {
+  transform: scale(1.1);
+}
+.header a:hover {
+  color: #bbbbbb;
 }
 
 .header a {
-  cursor: pointer;
   color: #ffffff;
   text-decoration: none;
   transition: all 0.2s;
 }
 
+.header .burger-icon {
+  display: none;
+}
+
 .header .list-container .list-nav {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
-
-.header .list-container .list-nav li:hover {
-  transform: scale(1.1);
-}
-.header .list-container .list-nav li a:hover {
-  color: #bbbbbb;
-}
-.header .icon-container a:hover {
-  color: #bbbbbb;
-}
-
-/* Cada uno de los elementos del nav debe dirigir al usuario al sector mencionado en la pagina */
-
-/* TABLETS */
-/* TABLETS */
-
-/* LAPTOPS */
-/* LAPTOPS */
-/* LARGE */
-/* LARGE */
-
 /* -------------------------------------------- MAIN ------------------------------------------ */
 
 /* General */
@@ -77,13 +71,12 @@ h4 {
   margin: 20px 0px;
 }
 
-.no-home section {
-  margin: 100px 0px;
-}
-
 .no-home {
-  padding: 0px 100px;
+  padding: 100px;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 /* General */
@@ -91,7 +84,7 @@ h4 {
 /* Home */
 
 .home .img-name {
-  background-image: url(./imgs/imgs/codigo.jpg);
+  background-image: url(imgs/imgs/codigo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -106,6 +99,7 @@ h4 {
   align-items: center;
   height: 100vh;
 }
+
 .home .img-name .background img {
   height: 200px;
   width: 200px;
@@ -129,33 +123,31 @@ h4 {
 
 /* ------------------------------------------------------------------------ */
 
-/* Texto de presentación */
-.about .presentation {
-  display: flex;
-  gap: 50px;
-}
+/* ABOUT */
 
 .about .presentation p {
   line-height: 2;
 }
-.no-home .tecnologies {
+
+.about .tecnologies {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
-.skills-container {
+.about .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  row-gap: 20px;
 }
 
-.about_presentation-tecnologies {
+.about .about_presentation-tecnologies {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
-.tecnologies h4 {
+.about .tecnologies h4 {
   text-align: center;
 }
 .tecnologies img {
@@ -164,62 +156,70 @@ h4 {
 .tecnologies .skills-container figure figcaption {
   text-align: center;
 }
+
+/* ABOUT */
+
+/* PORTFOLIO */
+
 .skills .projects {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  grid-template-columns: repeat(4, minmax(175px, 1fr));
   grid-template-rows: 275px;
   border: 3px solid blue;
 }
 
-.skills .projects .flex-item {
+.skills .projects .grid-item {
   border: 2px solid red;
+  height: 100%;
+  width: 100%;
   padding: 10px;
   border-radius: 15px;
   text-align: center;
 }
 
-.skills .projects .flex-item img {
-  height: 250px;
-  width: 250px;
-  object-fit: cover;
+.skills .projects a {
+  color: #000;
+  text-decoration: none;
 }
 
-/* Texto Presentación */
+.skills .projects .grid-item img {
+  height: calc(100% - 27px);
+  width: 100%;
+}
+
+/* PORTFOLIO */
 
 /* ------------------------------------------------------------------------ */
 
-/* Habilidades */
+/* CONTACT */
 
-/* Habilidades */
-
-/* ------------------------------------------------------------------------ */
-
-/* Contact Section */
-
-.no-home .contact .contact-methods {
+.contact .contact-methods {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 88px;
+  grid-auto-rows: 88px;
   gap: 100px;
   padding: 10px;
   margin-top: 50px;
-  height: 108px;
 }
 
-.no-home .contact .contact-methods i {
+.contact .contact-methods i {
   font-size: 50px;
 }
-.no-home .contact .contact-methods a {
+
+.contact .contact-methods a {
   color: rgba(58, 54, 54, 0.9);
   text-decoration: none;
 }
 
-.no-home .contact .contact-methods .contact-item {
+.contact .contact-methods .contact-item {
   padding: 5px;
   text-align: center;
   transition: 0.2s;
 }
 
-.no-home .contact .contact-methods .contact-item:hover {
+.contact .contact-methods .contact-item:hover {
   transform: scale(1.1);
 }
 
@@ -250,177 +250,349 @@ h4 {
 
 /* AJUSTAR ABOUT-SECTION Y SKILL-SECTION A PANTALLAS MAS PEQUEÑAS */
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-}
-/* AJUSTAR ABOUT-SECTION Y SKILL-SECTION A PANTALLAS MAS PEQUEÑAS */
-
-/* PHONES */
-
-/* para hacerlo responsive tengo que obtener la información del DOM,
-  buscar el dato window.innerWidth para obtener el ancho,
-  y window.innerHeight para obtener el alto. Entonces creamos una función en header.component.ts que nos diga que si la pantalla es <= 600 px que agregue el atributo que haga que se convierta en responsive */
-@media only screen and (max-width: 767px) {
-  /* GENERAL */
-
+/* SEGUIR TRABAJANDO EN LOS EFECTOS POR DEBAJO DE 1024PX */
+@media screen and (min-width: 900px) and (max-width: 1024px) {
   h2,
-  h4 {
+  h4,
+  p {
     text-align: center;
   }
-
-  .no-home {
-    padding: 0 50px;
-    font-size: 1em;
-  }
-
-  /* GENERAL */
-
-  /* HEADER */
-
   .header {
-    height: 100px;
-    width: 100vw;
-  }
-  .header .icon-container {
-    height: 50px;
-    width: 50px;
-    display: grid;
-    place-items: center;
-  }
-  .header .icon-container a {
-    font-size: 30px;
-  }
-
-  /* hacer aparecer cuando se aprete en burger-icon */
-  .header .list-container {
-    visibility: hidden;
-    background-color: #625e5ef2;
-    position: absolute;
-    top: 100px;
-    left: 0;
-  }
-
-  /* El list-nav tiene que estar hidden hasta que se aprete el boton */
-
-  .header .list-container .list-nav {
-    width: 100vw;
-    height: 100vh;
     flex-direction: column;
-    gap: 0;
+    height: auto;
+    padding: 0;
   }
-  .header .list-container .list-nav li {
-    height: 100px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
+
+  .header .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1%;
   }
-  .header .list-container .list-nav li:hover {
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-  }
+
   .header .burger-icon {
-    color: #ffffff;
-    height: 50px;
     width: 50px;
+    height: 50px;
     display: grid;
     place-items: center;
+    font-size: 20px;
   }
-  .header .burger-icon i {
-    font-size: 30px;
+
+  .header .icons .burger-icon i {
+    color: #fff;
+    cursor: pointer;
     transition: 0.2s;
   }
-  .header .burger-icon i:hover {
+  .header .icons .burger-icon i:hover {
     color: #bbbbbb;
   }
 
-  /* HEADER */
-
-  /* HOME */
-
-  .home .background {
-    padding: 50px;
+  /* CODIGO PARA EL NAV-RESPONSIVE */
+  .header .list-container .list-nav {
     flex-direction: column;
+    display: none;
+    gap: 0;
   }
-  .home .background .name {
+  .header .list-container {
+    width: 100%;
+  }
+  .header .list-container a {
+    display: block;
+    width: 100%;
     text-align: center;
+    line-height: 3;
+  }
+  .header .list-container .list-nav a:hover {
+    color: inherit;
+    background-color: #847f7ff8;
   }
 
-  .home .background .name span {
-    font-size: 0.9em;
-    font-weight: bold;
+  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
+
+  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
+
+  .header .list-container .list-nav li {
+    transition: 0.2s;
+    cursor: pointer;
   }
-  .home .img-name {
-    background-size: cover;
+
+  .header .list-container .list-nav li:hover {
+    transform: none;
   }
-  .about .presentation {
-    flex-direction: column;
+  /* CODIGO PARA EL ABOUT */
+  .about .tecnologies .skills-container figure {
     text-align: center;
+    flex-basis: 25%;
   }
 
-  /* HOME */
-
-  /* ABOUT */
-  .about .presentation .texto-presentacion,
-  .about .presentation .projects {
-    width: 100%;
+  /* CODIGO PARA EL PORTFOLIO */
+  .skills .projects {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-rows: 275px 275px;
   }
-
-  .about .presentation .projects {
-    overflow-x: scroll;
-    padding: 8px;
-    width: 100%;
-    height: 360px;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 8px;
-    gap: 12px;
-    flex-wrap: nowrap;
+  .skills .projects a:last-child {
+    grid-column: 2 / span 1;
   }
-
-  .presentation .projects .flex-item {
-    flex: 0 0 100%;
-    padding: 24px;
-    scroll-snap-align: start;
-  }
-
-  /* ABOUT */
-
-  /* SKILLS */
-
-  .skills .tecnologies {
-    flex-direction: column;
-  }
-
-  .skills .tecnologies .tecnologies-item {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .skills .tecnologies .tecnologies-item figure {
-    width: calc(50% - 30px);
-  }
-  .skills .tecnologies .tecnologies-item figure img {
-    width: 100%;
-  }
-  .skills .skills-container {
-    padding: 10px;
-    justify-content: space-evenly;
-  }
-  /* SKILLS */
-
-  /* CONTACT */
-
-  .no-home .contact .contact-methods {
-    grid-template-columns: 1fr 1fr;
-    gap: 50px 70px;
-    height: 220px;
-  }
-
-  .no-home .contact .contact-methods .contact-item {
-    height: 75px;
-    flex-basis: calc(50% - 10px);
-  }
-  /* SE VOLVIO A BUGEAR, ENCONTRAR SOLUCION */
-
-  /* CONTACT */
 }
 
-/* PHONES */
+@media screen and (max-width: 899px) and (min-width: 650px) {
+  h2,
+  h4,
+  p {
+    text-align: center;
+  }
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+  }
+
+  .header .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1%;
+  }
+
+  .header .burger-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+  }
+
+  .header .icons .burger-icon i {
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .header .icons .burger-icon i:hover {
+    color: #bbbbbb;
+  }
+
+  /* CODIGO PARA EL NAV-RESPONSIVE */
+  .header .list-container .list-nav {
+    flex-direction: column;
+    display: none;
+    gap: 0;
+  }
+  .header .list-container {
+    width: 100%;
+  }
+  .header .list-container a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 3;
+  }
+  .header .list-container .list-nav a:hover {
+    color: inherit;
+    background-color: #847f7ff8;
+  }
+
+  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
+
+  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
+
+  .header .list-container .list-nav li {
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .header .list-container .list-nav li:hover {
+    transform: none;
+  }
+  /* CODIGO PARA EL HOME */
+  .home .img-name .background {
+    flex-direction: column;
+  }
+
+  .home .img-name .background span {
+    text-align: center;
+  }
+
+  /* CODIGO PARA EL ABOUT */
+  .about .tecnologies .skills-container figure {
+    text-align: center;
+    flex-basis: 33.33%;
+  }
+
+  /* CODIGO PARA EL PORTFOLIO */
+  .skills .projects {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 275px 275px;
+  }
+
+  /* CODIGO PARA CONTACTO */
+
+  .contact .contact-methods {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 88px 88px;
+    padding: 10px 70px;
+    row-gap: 50px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 649px) {
+  h2,
+  h4,
+  p {
+    text-align: center;
+  }
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+  }
+
+  .header .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1%;
+  }
+
+  .header .burger-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+  }
+
+  .header .icons .burger-icon i {
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .header .icons .burger-icon i:hover {
+    color: #bbbbbb;
+  }
+
+  /* CODIGO PARA EL NAV-RESPONSIVE */
+  .header .list-container .list-nav {
+    flex-direction: column;
+    display: none;
+    gap: 0;
+  }
+  .header .list-container {
+    width: 100%;
+  }
+  .header .list-container a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 3;
+  }
+  .header .list-container .list-nav a:hover {
+    color: inherit;
+    background-color: #847f7ff8;
+  }
+
+  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
+
+  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
+
+  .header .list-container .list-nav li {
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .header .list-container .list-nav li:hover {
+    transform: none;
+  }
+  /* CODIGO PARA EL HOME */
+
+  .no-home {
+    padding: 100px 10px;
+  }
+
+  .home .img-name .background {
+    flex-direction: column;
+  }
+
+  .home .img-name .background span {
+    text-align: center;
+  }
+
+  /* CODIGO PARA EL ABOUT */
+  .about .tecnologies .skills-container figure {
+    text-align: center;
+    flex-basis: calc(33.33% - 50px);
+  }
+
+  /* CODIGO PARA EL PORTFOLIO */
+  .skills .projects {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 275px 275px;
+  }
+
+  /* CODIGO PARA CONTACTO */
+
+  .contact .contact-methods {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 88px 88px;
+    padding: 10px 70px;
+    row-gap: 50px;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .header {
+    height: 9%;
+  }
+
+  .header .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1%;
+  }
+
+  .header .burger-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+  }
+
+  .header .icons .burger-icon i {
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .header .icons .burger-icon i:hover {
+    color: #bbbbbb;
+  }
+
+  /* CODIGO PARA EL NAV-RESPONSIVE */
+  .header .list-container .list-nav {
+    flex-direction: column;
+    display: none;
+    gap: 0;
+  }
+  .header .list-container {
+    width: 100%;
+  }
+  .header .list-container a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 3;
+  }
+  .header .list-container .list-nav a:hover {
+    color: inherit;
+    background-color: #847f7ff8;
+  }
+
+  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
+
+  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
+
+  .header .list-container .list-nav li {
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}

@@ -18,21 +18,19 @@
   </head>
   <body>
     <header class="header">
-      <div class="icons">
+      <nav class="list-container">
         <div class="icon-container">
           <a href="#home"><i class="fa-solid fa-code"></i></a>
         </div>
-        <div class="burger-icon">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </div>
-      <nav class="list-container">
-        <ul class="list-nav">
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#about">Sobre Mi</a></li>
-          <li><a href="#skills">Portfolio</a></li>
-          <li><a href="#contact">Contacto</a></li>
+        <ul id="main-menu" class="list-nav">
+          <li class="link"><a href="#home">Inicio</a></li>
+          <li class="link"><a href="#about">Sobre Mi</a></li>
+          <li class="link"><a href="#skills">Portfolio</a></li>
+          <li class="link"><a href="#contact">Contacto</a></li>
         </ul>
+        <div class="burger-icon">
+          <i id="toggle-menu" class="fa-solid fa-bars"></i>
+        </div>
       </nav>
     </header>
     <main>
@@ -128,30 +126,48 @@
           <h2 id="skills">Portfolio</h2>
           <h4>Aquí puedes ver alguno de mis proyectos</h4>
           <div class="projects">
-            <a href="https://www.facebook.com/" target="_blank">
-              <div class="grid-item">
-                <img src="./imgs/imgs/facebook.png" alt="facebook" />
-                <p class="project-item">Proyecto 1</p>
-              </div>
-            </a>
-            <a href="https://www.youtube.com/" target="_blank">
-              <div class="grid-item">
-                <img src="./imgs/imgs/youtube.png" alt="youtube" />
-                <p class="project-item">Proyecto 2</p>
-              </div>
-            </a>
-            <a href="https://www.wikipedia.com/" target="_blank">
-              <div class="grid-item">
-                <img src="./imgs/imgs/wikipedia.jpg" alt="wikipedia" />
-                <p class="project-item">Proyecto 3</p>
-              </div></a
-            >
-            <a href="https://www.google.com/" target="_blank">
-              <div class="grid-item">
-                <img src="./imgs/imgs/google.png" alt="google" />
-                <p class="project-item">Proyecto 4</p>
-              </div></a
-            >
+            <div class="grid-item">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
+                  src="https://biblioteca.acropolis.org/wp-content/uploads/2014/12/azul.png"
+                  alt="facebook"
+                />
+              </a>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><p class="project-item">Proyecto 1</p></a
+              >
+            </div>
+            <div class="grid-item">
+              <a href="https://www.youtube.com/" target="_blank">
+                <img
+                  src="https://hambike.com.ar/wp-content/uploads/2020/07/colores-rojo-e2c21ae6c67dc8ef44129ab38c8087ae-1024-1024.jpg"
+                  alt="youtube"
+                />
+              </a>
+              <a href="https://www.youtube.com/" target="_blank"
+                ><p class="project-item">Proyecto 2</p></a
+              >
+            </div>
+            <div class="grid-item">
+              <a href="https://www.wikipedia.com/" target="_blank">
+                <img
+                  src="https://images.homify.com/c_fill,f_auto,q_0,w_740/v1526483605/p/photo/image/2561425/2.jpg"
+                  alt="wikipedia"
+              /></a>
+              <a href="https://www.wikipedia.com/" target="_blank"
+                ><p class="project-item">Proyecto 3</p></a
+              >
+            </div>
+            <div class="grid-item">
+              <a href="https://www.google.com/" target="_blank">
+                <img
+                  src="https://www.color-hex.com/palettes/33532.png"
+                  alt="google"
+              /></a>
+              <a href="https://www.google.com/" target="_blank"
+                ><p class="project-item">Proyecto 4</p></a
+              >
+            </div>
           </div>
         </section>
         <section class="contact">

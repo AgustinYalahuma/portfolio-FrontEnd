@@ -1,5 +1,3 @@
-/* COMPUTADORA */
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,64 +6,12 @@
   scroll-behavior: smooth;
 }
 
-.header {
-  background-color: #625e5ef2;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-  position: fixed;
-  z-index: 10000;
-}
-
-.header .icon-container {
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
-}
-/* Sirve para cuando se dezliza el scroll-bar deje un margin en la parte superior que se quiere mostrar */
 #about,
-#skills,
-#contact {
+#skills {
   scroll-margin-top: 75px;
 }
 
-.header .list-container .list-nav li {
-  display: grid;
-  place-items: center;
-  list-style: none;
-  color: #fff;
-  transition: 0.2s;
-}
-.header .list-container .list-nav li:hover {
-  transform: scale(1.1);
-}
-.header a:hover {
-  color: #bbbbbb;
-}
-
-.header a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.header .burger-icon {
-  display: none;
-}
-
-.header .list-container .list-nav {
-  display: flex;
-  gap: 30px;
-}
-/* -------------------------------------------- MAIN ------------------------------------------ */
-
 /* General */
-
 h2,
 h4 {
   margin: 20px 0px;
@@ -79,7 +25,77 @@ h4 {
   gap: 100px;
 }
 
-/* General */
+/* HEADER */
+
+.header {
+  background-color: #625e5ef2;
+  width: 100%;
+  height: 50px;
+  padding: 0 5%;
+  position: fixed;
+  z-index: 10000;
+}
+
+.header .list-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .list-container .icon-container {
+  font-size: 1.3em;
+  width: 50px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.header .list-container .list-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header .list-container .list-nav li {
+  list-style: none;
+  transition: 0.2s;
+}
+
+.header .list-container .list-nav li:hover {
+  transform: scale(1.1);
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.header .list-container .list-nav a {
+  color: #bbbbbb;
+}
+
+.header .list-container .list-nav a:hover {
+  color: #fff;
+}
+
+.header .list-container .icon-container a:hover {
+  color: #bbb;
+}
+
+.header .burger-icon {
+  display: none;
+}
+
+/* ACTIVE - NAVBAR */
+.header li.active {
+  transform: scale(1.1);
+}
+.header .list-container .list-nav li.active a {
+  color: #fff;
+}
+
+/* MAIN */
 
 /* Home */
 
@@ -119,11 +135,7 @@ h4 {
   color: #222;
 }
 
-/* Home */
-
-/* ------------------------------------------------------------------------ */
-
-/* ABOUT */
+/* About */
 
 .about .presentation p {
   line-height: 2;
@@ -157,24 +169,19 @@ h4 {
   text-align: center;
 }
 
-/* ABOUT */
-
-/* PORTFOLIO */
+/* Portfolio */
 
 .skills .projects {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(4, minmax(175px, 1fr));
   grid-template-rows: 275px;
-  border: 3px solid blue;
 }
 
 .skills .projects .grid-item {
-  border: 2px solid red;
   height: 100%;
   width: 100%;
   padding: 10px;
-  border-radius: 15px;
   text-align: center;
 }
 
@@ -184,15 +191,12 @@ h4 {
 }
 
 .skills .projects .grid-item img {
+  border-radius: 15px;
   height: calc(100% - 27px);
   width: 100%;
 }
 
-/* PORTFOLIO */
-
-/* ------------------------------------------------------------------------ */
-
-/* CONTACT */
+/* Contact */
 
 .contact .contact-methods {
   display: grid;
@@ -223,9 +227,7 @@ h4 {
   transform: scale(1.1);
 }
 
-/* Contact Section */
-
-/* ---------------------------------------- FOOTER -------------------------------------------------- */
+/* FOOTER */
 
 .footer {
   background-color: #625e5ee6;
@@ -246,164 +248,112 @@ h4 {
   color: #fff;
 }
 
-/* COMPUTADORA */
-
-/* AJUSTAR ABOUT-SECTION Y SKILL-SECTION A PANTALLAS MAS PEQUEÑAS */
-
-/* SEGUIR TRABAJANDO EN LOS EFECTOS POR DEBAJO DE 1024PX */
-@media screen and (min-width: 900px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   h2,
   h4,
   p {
     text-align: center;
   }
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 0;
-  }
 
-  .header .icons {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 1%;
-  }
+  /* HEADER */
 
   .header .burger-icon {
     width: 50px;
-    height: 50px;
+    height: 100%;
     display: grid;
     place-items: center;
     font-size: 20px;
   }
 
-  .header .icons .burger-icon i {
+  .header .burger-icon i {
     color: #fff;
     cursor: pointer;
     transition: 0.2s;
   }
-  .header .icons .burger-icon i:hover {
-    color: #bbbbbb;
+  .header .burger-icon i:active {
+    color: #bbb;
   }
 
-  /* CODIGO PARA EL NAV-RESPONSIVE */
+  .header .list-container .icon-container a:hover {
+    color: #fff;
+  }
+
+  .header .list-container .icon-container a:active {
+    color: #bbb;
+  }
+
   .header .list-container .list-nav {
+    background-color: #625e5ef2;
     flex-direction: column;
-    display: none;
+    position: absolute;
+    top: 50px;
+    right: -25%;
     gap: 0;
+    width: 25%;
+    transition: transform 0.3s linear;
+    transform: translateX(0);
   }
-  .header .list-container {
-    width: 100%;
+
+  .header .list-container ul.menu-show {
+    transform: translateX(-100%);
   }
-  .header .list-container a {
+
+  .header .list-container .list-nav a {
     display: block;
-    width: 100%;
     text-align: center;
     line-height: 3;
-  }
-  .header .list-container .list-nav a:hover {
-    color: inherit;
-    background-color: #847f7ff8;
-  }
-
-  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
-
-  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
-
-  .header .list-container .list-nav li {
     transition: 0.2s;
-    cursor: pointer;
+  }
+
+  .header .list-container .list-nav a:hover {
+    color: #fff;
   }
 
   .header .list-container .list-nav li:hover {
     transform: none;
   }
-  /* CODIGO PARA EL ABOUT */
+
+  .header .list-container .list-nav li:active {
+    background-color: #847f7ff8;
+  }
+
+  /* MAIN */
+
+  /* About */
   .about .tecnologies .skills-container figure {
     text-align: center;
     flex-basis: 25%;
   }
 
-  /* CODIGO PARA EL PORTFOLIO */
+  /* Portfolio */
+
   .skills .projects {
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 275px 275px;
   }
+
   .skills .projects a:last-child {
     grid-column: 2 / span 1;
   }
 }
 
-@media screen and (max-width: 899px) and (min-width: 650px) {
-  h2,
-  h4,
-  p {
-    text-align: center;
-  }
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 0;
-  }
+@media screen and (max-width: 900px) {
+  /* HEADER */
 
-  .header .icons {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 1%;
-  }
-
-  .header .burger-icon {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    font-size: 20px;
-  }
-
-  .header .icons .burger-icon i {
-    color: #fff;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .header .icons .burger-icon i:hover {
-    color: #bbbbbb;
-  }
-
-  /* CODIGO PARA EL NAV-RESPONSIVE */
   .header .list-container .list-nav {
-    flex-direction: column;
-    display: none;
-    gap: 0;
-  }
-  .header .list-container {
+    right: -100%;
     width: 100%;
-  }
-  .header .list-container a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 3;
-  }
-  .header .list-container .list-nav a:hover {
-    color: inherit;
-    background-color: #847f7ff8;
+    transform: translateX(0);
   }
 
-  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
-
-  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
-
-  .header .list-container .list-nav li {
-    transition: 0.2s;
-    cursor: pointer;
+  .header .list-container ul.menu-show {
+    transform: translateX(-100%);
   }
 
-  .header .list-container .list-nav li:hover {
-    transform: none;
-  }
-  /* CODIGO PARA EL HOME */
+  /* MAIN */
+
+  /* Home */
+
   .home .img-name .background {
     flex-direction: column;
   }
@@ -412,19 +362,24 @@ h4 {
     text-align: center;
   }
 
-  /* CODIGO PARA EL ABOUT */
+  /* About */
+
   .about .tecnologies .skills-container figure {
     text-align: center;
     flex-basis: 33.33%;
   }
 
-  /* CODIGO PARA EL PORTFOLIO */
+  /* Portfolio */
+
   .skills .projects {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 275px 275px;
   }
+  .skills .projects a:last-child {
+    grid-column: span 1;
+  }
 
-  /* CODIGO PARA CONTACTO */
+  /* Contact */
 
   .contact .contact-methods {
     grid-template-columns: 1fr 1fr;
@@ -434,79 +389,27 @@ h4 {
   }
 }
 
-@media screen and (min-width: 450px) and (max-width: 649px) {
-  h2,
-  h4,
-  p {
-    text-align: center;
-  }
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 0;
-  }
+@media screen and (max-width: 650px) {
+  /* General */
 
-  .header .icons {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 1%;
+  .home,
+  .no-home {
+    font-size: 19px;
   }
-
-  .header .burger-icon {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    font-size: 20px;
-  }
-
-  .header .icons .burger-icon i {
-    color: #fff;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .header .icons .burger-icon i:hover {
-    color: #bbbbbb;
-  }
-
-  /* CODIGO PARA EL NAV-RESPONSIVE */
-  .header .list-container .list-nav {
-    flex-direction: column;
-    display: none;
-    gap: 0;
-  }
-  .header .list-container {
-    width: 100%;
-  }
-  .header .list-container a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 3;
-  }
-  .header .list-container .list-nav a:hover {
-    color: inherit;
-    background-color: #847f7ff8;
-  }
-
-  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
-
-  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
-
-  .header .list-container .list-nav li {
-    transition: 0.2s;
-    cursor: pointer;
-  }
-
-  .header .list-container .list-nav li:hover {
-    transform: none;
-  }
-  /* CODIGO PARA EL HOME */
 
   .no-home {
     padding: 100px 10px;
   }
+
+  /* HEADER */
+
+  .header .list-container .list-nav {
+    height: 100vh;
+  }
+
+  /* MAIN */
+
+  /* Home */
 
   .home .img-name .background {
     flex-direction: column;
@@ -516,19 +419,22 @@ h4 {
     text-align: center;
   }
 
-  /* CODIGO PARA EL ABOUT */
+  /* About */
+
   .about .tecnologies .skills-container figure {
     text-align: center;
-    flex-basis: calc(33.33% - 50px);
+    flex-basis: 33%;
   }
 
-  /* CODIGO PARA EL PORTFOLIO */
+  /* Portfolio */
+
   .skills .projects {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 275px 275px;
+    grid-template-rows: 220px 220px;
+    padding: 0;
   }
 
-  /* CODIGO PARA CONTACTO */
+  /* Contact */
 
   .contact .contact-methods {
     grid-template-columns: 1fr 1fr;
@@ -538,115 +444,52 @@ h4 {
   }
 }
 
-@media screen and (max-width: 449px) {
-  h2,
-  h4,
-  p {
-    text-align: center;
-  }
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 0;
-  }
-
-  .header .icons {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 1%;
-  }
-
-  .header .burger-icon {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    font-size: 20px;
-  }
-
-  .header .icons .burger-icon i {
-    color: #fff;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .header .icons .burger-icon i:hover {
-    color: #bbbbbb;
-  }
-
-  /* CODIGO PARA EL NAV-RESPONSIVE */
-  .header .list-container .list-nav {
-    flex-direction: column;
-    display: none;
-    gap: 0;
-  }
-  .header .list-container {
-    width: 100%;
-  }
-  .header .list-container a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 3;
-  }
-  .header .list-container .list-nav a:hover {
-    color: inherit;
-    background-color: #847f7ff8;
-  }
-
-  /* HACER APARECER CUANDO SE TOQUE EL BURGER-ICON */
-
-  /* HACER QUE AL TOCAR DENTRO DEL LI VAYA IGUALMENTE A LA PARTE DESEADO Y LUEGO SE SUBA EL NAV-BAR */
-
-  .header .list-container .list-nav li {
-    transition: 0.2s;
-    cursor: pointer;
-  }
-
-  .header .list-container .list-nav li:hover {
-    transform: none;
-  }
-  /* CODIGO PARA EL HOME */
-
+/* linea para decorar cuando pongan la pantalla en horizontal */
+/* @media screen and (max-width: 449px) and (orientation: landscape){}  */
+@media screen and (max-width: 550px) {
   .no-home {
-    padding: 100px 10px;
+    padding: 60px 10px;
     gap: 50px;
   }
 
-  .home .img-name .background {
-    flex-direction: column;
-  }
+  /* MAIN */
+
+  /* Home */
 
   .home .img-name .background .name {
     text-align: center;
   }
 
-  /* CODIGO PARA EL ABOUT */
+  /* About */
 
   .about .presentation p {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
+
   .about .tecnologies img {
     height: 100px;
   }
-  .about .tecnologies .skills-container figure {
-    text-align: center;
-    flex-basis: calc(33.33% - 50px);
-  }
 
-  /* CODIGO PARA EL PORTFOLIO */
+  /* Portfolio */
+
   .skills .projects {
-    padding: 0 30px;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 200px);
+    justify-content: center;
   }
-  /* CODIGO PARA CONTACTO */
+
+  /* Contact */
 
   .contact .contact-methods {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 88px 88px;
-    padding: 10px 20px;
-    /* row-gap: 50px; */
-    gap: 0;
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Contact */
+
+  .contact .contact-methods {
+    padding: 0;
+    gap: 30px 0;
   }
 }

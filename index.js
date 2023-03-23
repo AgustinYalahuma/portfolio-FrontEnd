@@ -1,6 +1,6 @@
-const toggleMenuElement = document.getElementById("toggle-menu");
-const mainMenuElement = document.getElementById("main-menu");
-const links = document.querySelectorAll(".link");
+const toggleMenuElement = document.querySelector(".nav__icon");
+const mainMenuElement = document.querySelector(".nav__list");
+const links = document.querySelectorAll(".nav__li");
 const sections = document.querySelectorAll("section");
 
 toggleMenuElement.addEventListener("click", () => {
@@ -22,11 +22,11 @@ function activeMenu() {
       window.scrollY ==
     0
   ) {
-    links[len].classList.remove("active");
-    links[3].classList.add("active");
+    links[len].classList.remove("nav__li-active");
+    links[sections.length - 1].classList.add("nav__li-active");
   } else {
-    links.forEach((ltx) => ltx.classList.remove("active"));
-    links[len].classList.add("active");
+    links.forEach((ltx) => ltx.classList.remove("nav__li-active"));
+    links[len].classList.add("nav__li-active");
   }
 }
 

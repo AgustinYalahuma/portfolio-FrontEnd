@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Soy un desarrollador Front-end con experiencia en el maquetado de paginas web. Aquí podrás ver mis proyectos más actuales"
+    />
+    <meta
+      name="keywords"
+      content="web developer, front-end, HTML, CSS, JavaScript, user experience, user inteface "
+    />
+    <meta name="author" content="Alexis Agustin Yalahuma" />
+
+    <link rel="canonical" href="https://agustinyalahuma.github.io/" />
     <title>PortFolio Web</title>
     <link rel="stylesheet" href="index.css" />
     <link
@@ -18,104 +29,122 @@
   </head>
   <body>
     <header class="header">
-      <nav class="list-container">
-        <div class="icon-container">
-          <a href="#home"><i class="fa-solid fa-code"></i></a>
+      <nav class="nav">
+        <div class="nav__icon-container">
+          <a class="nav__link-icon" href="#home"
+            ><i class="fa-solid fa-code"></i
+          ></a>
         </div>
-        <ul id="main-menu" class="list-nav">
-          <li class="link"><a href="#home">Inicio</a></li>
-          <li class="link"><a href="#about">Sobre Mi</a></li>
-          <li class="link"><a href="#skills">Portfolio</a></li>
-          <li class="link"><a href="#contact">Contacto</a></li>
+        <ul class="nav__list">
+          <li class="nav__li"><a class="nav__link" href="#home">Inicio</a></li>
+          <li class="nav__li">
+            <a class="nav__link" href="#about">Sobre Mi</a>
+          </li>
+          <li class="nav__li">
+            <a class="nav__link" href="#skills">Portfolio</a>
+          </li>
+          <li class="nav__li">
+            <a class="nav__link" href="#contact">Contacto</a>
+          </li>
         </ul>
-        <div class="burger-icon">
-          <i id="toggle-menu" class="fa-solid fa-bars"></i>
+        <div class="nav__burger-icon">
+          <i class="fa-solid fa-bars nav__icon"></i>
         </div>
       </nav>
     </header>
     <main>
       <section id="home" class="home">
-        <div class="img-name">
-          <div class="background">
+        <div class="home__background">
+          <div class="home__img-name">
             <img
-              class="photo-agus"
+              class="home__img"
               src="./imgs/imgs/foto_de_perfil.jpg"
               alt="Agustín Yalahuma"
             />
-            <div class="name">
-              <h1><a href="#about">Agustín Yalahuma</a></h1>
-              <span>Front End Developer</span>
+            <div class="home__name">
+              <h1><a href="#about" class="home__link">Agustín Yalahuma</a></h1>
+              <span class="home__span">Front End Developer</span>
             </div>
           </div>
         </div>
       </section>
       <div class="no-home">
         <section class="about">
-          <h2 id="about">Sobre Mi</h2>
-          <div class="about_presentation-tecnologies">
-            <div class="presentation">
-              <p class="texto-presentacion">
-                Hola me llamo Agustín, estudié en la E.E.S.T Nº7 y me recibí
-                como Técnico Aviónico de la misma. Durante esta etapa pude
-                encontrar lo que de verdad me interesaba: la programación. Luego
-                de terminar el secundario en 2022, de manera autodidacta,
-                arranque a aprender sobre desarrollo de paginas web lo cual me
-                gustó y me llevo a realizar proyectos referidos a este ámbito.
-                Algunos de mis conocimientos son:
-              </p>
-            </div>
-            <div class="tecnologies">
-              <div class="front-end tecnologies-item">
-                <h4>Tecnologías Front End</h4>
-                <div class="skills-container">
-                  <figure>
-                    <img src="./imgs/svg/html.svg" alt="Html" class="html" />
-                    <figcaption>HTML</figcaption>
-                  </figure>
-                  <figure>
-                    <img src="./imgs/svg/css.svg" alt="Css" class="css" />
-                    <figcaption>CSS</figcaption>
-                  </figure>
-                  <figure>
+          <h2 id="about" class="about__title">Sobre Mi</h2>
+          <div class="about__presentation-tecnologies">
+            <p class="about__presentation">
+              Hola me llamo Agustín, estudié en la E.E.S.T Nº7 y me recibí como
+              Técnico Aviónico de la misma. Durante esta etapa pude encontrar lo
+              que de verdad me interesaba: la programación. Luego de terminar el
+              secundario en 2022, de manera autodidacta, arranque a aprender
+              sobre desarrollo de paginas web lo cual me gustó y me llevo a
+              realizar proyectos referidos a este ámbito. Algunos de mis
+              conocimientos son:
+            </p>
+            <div class="about__tecnologies">
+              <div class="tecnologies">
+                <h4 class="tecnology__title">Tecnologías Front End</h4>
+                <div class="tecnology__img-container">
+                  <figure class="tecnology__figure">
                     <img
+                      class="tecnology__img"
+                      src="./imgs/svg/html.svg"
+                      alt="Html"
+                    />
+                    <figcaption class="tecnology__name">HTML</figcaption>
+                  </figure>
+                  <figure class="tecnology__figure">
+                    <img
+                      class="tecnology__img"
+                      src="./imgs/svg/css.svg"
+                      alt="Css"
+                    />
+                    <figcaption class="tecnology__name">CSS</figcaption>
+                  </figure>
+                  <figure class="tecnology__figure">
+                    <img
+                      class="tecnology__img"
                       src="./imgs/svg/javascript.svg"
                       alt="JavaScript"
-                      class="javascript"
                     />
-                    <figcaption>JavaScript</figcaption>
+                    <figcaption class="tecnology__name">JavaScript</figcaption>
                   </figure>
-                  <figure>
+                  <figure class="tecnology__figure">
                     <img
+                      class="tecnology__img"
                       src="./imgs/svg/typescript.svg"
                       alt="TypeScript"
-                      class="typescript"
                     />
-                    <figcaption>TypeScript</figcaption>
+                    <figcaption class="tecnology__name">TypeScript</figcaption>
                   </figure>
-                  <figure>
+                  <figure class="tecnology__figure">
                     <img
+                      class="tecnology__img"
                       src="./imgs/svg/angular.svg"
                       alt="Angular"
-                      class="Angular"
                     />
-                    <figcaption>Angular</figcaption>
+                    <figcaption class="tecnology__name">Angular</figcaption>
                   </figure>
                 </div>
               </div>
-              <div class="back-end tecnologies-item">
-                <h4>Tecnologías Back End</h4>
-                <div class="skills-container">
-                  <figure>
+              <div class="tecnologies">
+                <h4 class="tecnology__title">Tecnologías Back End</h4>
+                <div class="tecnology__img-container">
+                  <figure class="tecnology__figure">
                     <img
+                      class="tecnology__img"
                       src="./imgs/svg/python.svg"
                       alt="Python"
-                      class="python"
                     />
-                    <figcaption>Python</figcaption>
+                    <figcaption class="tecnology__name">Python</figcaption>
                   </figure>
-                  <figure>
-                    <img src="./imgs/svg/mysql.svg" alt="mysql" class="mysql" />
-                    <figcaption>MySQL</figcaption>
+                  <figure class="tecnology__figure">
+                    <img
+                      class="tecnology__img"
+                      src="./imgs/svg/mysql.svg"
+                      alt="mysql"
+                    />
+                    <figcaption class="tecnology__name">MySQL</figcaption>
                   </figure>
                 </div>
               </div>
@@ -123,75 +152,115 @@
           </div>
         </section>
         <section class="skills">
-          <h2 id="skills">Portfolio</h2>
-          <h4>Aquí puedes ver alguno de mis proyectos</h4>
-          <div class="projects">
-            <div class="grid-item">
-              <a href="https://www.facebook.com/" target="_blank">
+          <h2 id="skills" class="skills__title">Portfolio</h2>
+          <h4 class="skills__second-title">
+            Aquí puedes ver alguno de mis proyectos
+          </h4>
+          <div class="skills__projects">
+            <div class="skills__projects-item">
+              <a
+                class="skills__link"
+                href="https://www.facebook.com/"
+                target="_blank"
+              >
                 <img
+                  class="skills__img"
                   src="https://biblioteca.acropolis.org/wp-content/uploads/2014/12/azul.png"
                   alt="facebook"
                 />
               </a>
-              <a href="https://www.facebook.com/" target="_blank"
+              <a
+                class="skills__link"
+                href="https://www.facebook.com/"
+                target="_blank"
                 ><p class="project-item">Proyecto 1</p></a
               >
             </div>
-            <div class="grid-item">
-              <a href="https://www.youtube.com/" target="_blank">
+            <div class="skills__projects-item">
+              <a
+                class="skills__link"
+                href="https://www.youtube.com/"
+                target="_blank"
+              >
                 <img
+                  class="skills__img"
                   src="https://hambike.com.ar/wp-content/uploads/2020/07/colores-rojo-e2c21ae6c67dc8ef44129ab38c8087ae-1024-1024.jpg"
                   alt="youtube"
                 />
               </a>
-              <a href="https://www.youtube.com/" target="_blank"
+              <a
+                class="skills__link"
+                href="https://www.youtube.com/"
+                target="_blank"
                 ><p class="project-item">Proyecto 2</p></a
               >
             </div>
-            <div class="grid-item">
-              <a href="https://www.wikipedia.com/" target="_blank">
+            <div class="skills__projects-item">
+              <a
+                class="skills__link"
+                href="https://www.wikipedia.com/"
+                target="_blank"
+              >
                 <img
+                  class="skills__img"
                   src="https://images.homify.com/c_fill,f_auto,q_0,w_740/v1526483605/p/photo/image/2561425/2.jpg"
                   alt="wikipedia"
               /></a>
-              <a href="https://www.wikipedia.com/" target="_blank"
+              <a
+                class="skills__link"
+                href="https://www.wikipedia.com/"
+                target="_blank"
                 ><p class="project-item">Proyecto 3</p></a
               >
             </div>
-            <div class="grid-item">
-              <a href="https://www.google.com/" target="_blank">
+            <div class="skills__projects-item">
+              <a
+                class="skills__link"
+                href="https://www.google.com/"
+                target="_blank"
+              >
                 <img
+                  class="skills__img"
                   src="https://www.color-hex.com/palettes/33532.png"
                   alt="google"
               /></a>
-              <a href="https://www.google.com/" target="_blank"
+              <a
+                class="skills__link"
+                href="https://www.google.com/"
+                target="_blank"
                 ><p class="project-item">Proyecto 4</p></a
               >
             </div>
           </div>
         </section>
         <section class="contact">
-          <h2 id="contact">Contacto</h2>
-          <h4>Para trabajar juntos me puedes contactar.</h4>
-          <div class="contact-methods">
-            <a href="#"
-              ><div class="contact-item">
-                <i class="fa-regular fa-envelope"></i>
+          <h2 id="contact" class="contact__title">Contacto</h2>
+          <h4 class="contact__second-title">
+            Para trabajar juntos me puedes contactar.
+          </h4>
+          <div class="contact__methods">
+            <a class="contact__link" href="#"
+              ><div class="contact__item">
+                <i class="fa-regular fa-envelope contact__icon"></i>
                 <p>E-mail</p>
               </div></a
-            ><a href="https://www.instagram.com/agusyalahuma/"
-              ><div class="contact-item">
-                <i class="fa-brands fa-instagram"></i>
+            ><a
+              class="contact__link"
+              href="https://www.instagram.com/agusyalahuma/"
+              ><div class="contact__item">
+                <i class="fa-brands fa-instagram contact__icon"></i>
                 <p>Instagram</p>
               </div></a
-            ><a href="https://www.linkedin.com/in/alexis-yalahuma/"
-              ><div class="contact-item">
-                <i class="fa-brands fa-linkedin"></i>
+            ><a
+              class="contact__link"
+              href="https://www.linkedin.com/in/alexis-yalahuma/"
+              ><div class="contact__item">
+                <i class="fa-brands fa-linkedin contact__icon"></i>
                 <p>LinkedIn</p>
               </div></a
-            ><a href="https://github.com/AgustinYalahuma"
-              ><div class="contact-item">
-                <i class="fa-brands fa-github"></i>
+            ><a class="contact__link" href="https://github.com/AgustinYalahuma"
+              ><div class="contact__item">
+                <i class="fa-brands fa-github contact__icon"></i>
                 <p>Github</p>
               </div></a
             >
@@ -200,9 +269,10 @@
       </div>
     </main>
     <footer class="footer">
-      <p class="copyright">
-        Copyright © 2023. <a href="#home">@agustin-yalahuma</a> <br />Todos los
-        Derechos Reservados
+      <p class="footer__copyright">
+        Copyright © 2023.
+        <a class="footer__link" href="#home">@agustin-yalahuma</a> <br />Todos
+        los Derechos Reservados
       </p>
     </footer>
   </body>
